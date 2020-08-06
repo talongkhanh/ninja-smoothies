@@ -45,7 +45,7 @@ export default {
   }
 
   .index h3 {
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin-top: 20px;
     text-align: center;
   }
