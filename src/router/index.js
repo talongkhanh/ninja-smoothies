@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import Index from '@/views/Index'
 Vue.use(VueRouter)
 
-const routes = []
+const routes = [
+  {
+    path: '/',
+    name: 'Index',
+    component: Index
+  }
+]
 
 // eslint-disable-next-line no-new
 const router = new VueRouter({
