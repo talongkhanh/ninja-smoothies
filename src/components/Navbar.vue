@@ -2,11 +2,11 @@
   <div class="navbar">
     <nav class="nav-extended green darken-1">
       <div class="nav-content">
-          <router-link to="">
+          <router-link :to="{ name: 'Index' }">
               <span class="nav-title">Tiên Vương Tiệm Tạp Hóa</span>
           </router-link>
           <a href="" class="btn-floating btn-large halfway-fab light-green accent-3">
-              <router-link to="">
+              <router-link :to="{ name: 'Add' }">
                   <i class="material-icons">add</i>
               </router-link>
           </a>
