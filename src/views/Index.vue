@@ -26,9 +26,14 @@ export default {
   },
   methods: {
     deleteSmoothie(id) {
-      this.smoothies = this.smoothies.filter(smt => {
+      // delete doc from firebase
+      db.collection('smoothies').doc(id).delete()
+      .then(() => {
+        this.smoothies = this.smoothies.filter(smt => {
         return smt.id != id;
       })
+      })
+      
     }
   },
   created() {
