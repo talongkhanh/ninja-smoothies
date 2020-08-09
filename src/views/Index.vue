@@ -3,10 +3,10 @@
     <div class="card" v-for="smt in smoothies" :key="smt.id">
       <div class="cart-content">
         <i class="material-icons delete" @click="deleteSmoothie(smt.id)">delete</i>
-          <h3 class="pink-text">{{ smt.title }}</h3>
+          <h3 class="green-text text-accent-3">{{ smt.title }}</h3>
           <ul class="ingredients">
             <li v-for="(ing, index) in smt.ingredients" :key="index">
-              <span class="chip">{{ ing }}</span>
+              <span class="chip green darken-4 white-text">{{ ing }}</span>
             </li>
           </ul>
       </div>
@@ -15,14 +15,13 @@
 </template>
 
 <script>
+import db from '@/firebase/init'
+
 export default {
   name: 'Index',
   data() {
     return {
-      smoothies: [
-        { title: 'Sinh Tố Lúa Mạch', slug: 'sinh-to-lua-mach', ingredients: ['Lúa Mạch', 'Men Bia'], id: '1' },
-        { title: 'Gạo Lên Men', slug: 'gao-len-men', ingredients: ['Gạo', 'Men Rượu'], id: '2' },
-      ]
+      smoothies: []
     }
   },
   methods: {
@@ -31,6 +30,17 @@ export default {
         return smt.id != id;
       })
     }
+  },
+  created() {
+    //fetch data
+    db.collection('smoothies').get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+        let smoothie = doc.data()
+            smoothie.id = doc.id
+        this.smoothies.push(smoothie)
+      })
+    })
   },
 }
 </script>
