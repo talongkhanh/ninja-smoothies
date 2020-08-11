@@ -6,9 +6,10 @@
         <label for="title">Tile:</label>
         <input autocomplete="off" type="text" name="title" id="title" v-model="title" />
       </div>
-      <div v-for="(ing, index) in ingredients" :key="index">
+      <div class="field" v-for="(ing, index) in ingredients" :key="index">
         <label for="ingredient">Ingredient:</label>
         <input type="text" name="ingredient" id="ingredient" v-model="ingredients[index]" />
+        <i class="material-icons delete" @click="deleteIng(ing)">delete</i>
       </div>
       <div class="field">
         <label for="add-ingredient">Add an ingredient:</label>
@@ -89,6 +90,11 @@ export default {
         this.feedback = "You must enter the value to add ingredient";
       }
     },
+    deleteIng(ing) {
+      this.ingredients = this.ingredients.filter((ingredient) => {
+        return ingredient != ing;
+      });
+    },
   },
 };
 </script>
@@ -106,5 +112,15 @@ export default {
 }
 .add .btn {
   margin-top: 20px;
+}
+.add .field {
+  position: relative;
+}
+.add .delete {
+  color: #aaa;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  bottom: 16px;
 }
 </style>
