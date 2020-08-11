@@ -10,6 +10,11 @@
           </li>
         </ul>
       </div>
+      <span class="edit btn-floating halfway-fab pink">
+        <router-link :to="{ name: 'Edit', params: {slug: smt.slug} }">
+          <i class="material-icons">edit</i>
+        </router-link>
+      </span>
     </div>
   </div>
 </template>
@@ -94,5 +99,8 @@ export default {
   right: 4px;
   color: #aaa;
   cursor: pointer;
+}
+.index .edit {
+  text-align: center;
 }
 </style>

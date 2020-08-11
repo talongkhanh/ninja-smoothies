@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Index from '@/views/Index'
 import Add from '@/views/Add'
+import Edit from '@/views/Edit'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [{
   path: '/add',
   name: 'Add',
   component: Add
+},
+{
+  path: '/edit/:slug',
+  name: 'Edit',
+  component: Edit
 }
 ]
 
