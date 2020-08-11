@@ -6,17 +6,16 @@ import Add from '@/views/Add'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Index',
-    component: Index
-  },
-  {
-    path: '/add',
-    name: 'Add',
-    component: Add
-  }
+const routes = [{
+  path: '/',
+  name: 'Index',
+  component: Index
+},
+{
+  path: '/add',
+  name: 'Add',
+  component: Add
+}
 ]
 
 // eslint-disable-next-line no-new
