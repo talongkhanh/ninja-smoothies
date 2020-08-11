@@ -55,6 +55,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+@media (max-width: 1023px) {
+  div.index {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 500px) {
+  div.index {
+    grid-template-columns: 1fr;
+  }
+  div.index h3 {
+    font-size: 1.5em;
+  }
+}
+
 .index {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -69,7 +83,7 @@ export default {
 }
 
 .index .ingredients {
-  margin: 30px 30px;
+  margin: 10px;
 }
 .index .ingredients li {
   display: inline-block;

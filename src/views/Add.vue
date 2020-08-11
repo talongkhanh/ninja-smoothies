@@ -4,7 +4,7 @@
     <form @submit.prevent="add">
       <div class="field">
         <label for="title">Tile:</label>
-        <input type="text" name="title" id="title" v-model="title" />
+        <input autocomplete="off" type="text" name="title" id="title" v-model="title" />
       </div>
       <div v-for="(ing, index) in ingredients" :key="index">
         <label for="ingredient">Ingredient:</label>
@@ -13,6 +13,7 @@
       <div class="field">
         <label for="add-ingredient">Add an ingredient:</label>
         <input
+          autocomplete="off"
           type="text"
           name="add-ingredient"
           id="add-ingredient"
