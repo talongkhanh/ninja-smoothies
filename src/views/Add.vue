@@ -49,26 +49,30 @@ export default {
         this.feedback = null;
       };
       if (this.title) {
-        this.feedback = null;
-        this.slug = slugify(this.title, {
-          lower: true,
-          remove: /[$*_+~.()'"!\-:@]/g,
-          replacement: "-",
-        });
-        db.collection("smoothies")
-          .add({
-            title: this.title,
-            ingredients: this.ingredients,
-            slug: this.slug,
-          })
-          .then(() => {
-            this.$router.push({ name: "Index" });
-          })
-          .catch((err) => {
-            console.log(err);
+        if (this.ingredients.length === 0) {
+          this.feedback = "Ingredients is not empty!";
+        } else {
+          this.feedback = null;
+          this.slug = slugify(this.title, {
+            lower: true,
+            remove: /[$*_+~.()'"!\-:@]/g,
+            replacement: "-",
           });
+          db.collection("smoothies")
+            .add({
+              title: this.title,
+              ingredients: this.ingredients,
+              slug: this.slug,
+            })
+            .then(() => {
+              this.$router.push({ name: "Index" });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
       } else {
-        this.feedback = "You must enter a title";
+        this.feedback = "You must enter a title!";
       }
     },
     addIng() {
