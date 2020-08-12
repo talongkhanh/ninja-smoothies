@@ -88,7 +88,7 @@ export default {
 }
 
 .index .ingredients {
-  margin: 10px;
+  margin: 30px;
 }
 .index .ingredients li {
   display: inline-block;

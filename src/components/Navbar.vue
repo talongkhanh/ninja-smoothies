@@ -1,11 +1,11 @@
 <template>
   <div class="navbar">
-    <nav class="nav-extended indigo darken-2">
+    <nav class="nav-extended grey darken-4">
       <div class="nav-content">
         <router-link :to="{ name: 'Index' }">
           <span class="nav-title">Tiên Vương Tiệm Tạp Hóa</span>
         </router-link>
-        <a href class="btn-floating btn-large halfway-fab pink accent-2">
+        <a href class="btn-floating btn-large halfway-fab pink">
           <router-link :to="{ name: 'Add' }">
             <i class="material-icons">add</i>
           </router-link>

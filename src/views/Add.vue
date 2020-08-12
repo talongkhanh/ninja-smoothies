@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import slugify from "slugify";
+import slugify from "vietnamese-slug";
 import db from "@/firebase/init";
 export default {
   name: "Add",
@@ -55,11 +55,7 @@ export default {
           this.feedback = "Ingredients is not empty!";
         } else {
           this.feedback = null;
-          this.slug = slugify(this.title, {
-            lower: true,
-            remove: /[$*_+~.()'"!\-:@]/g,
-            replacement: "-",
-          });
+          this.slug = slugify(this.title);
           db.collection("smoothies")
             .add({
               title: this.title,
