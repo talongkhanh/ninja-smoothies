@@ -10,7 +10,7 @@
           </li>
         </ul>
       </div>
-      <span class="edit btn-floating halfway-fab pink">
+      <span class="edit btn-floating btn-large halfway-fab pink">
         <router-link :to="{ name: 'Edit', params: {slug: smt.slug} }">
           <i class="material-icons">edit</i>
         </router-link>

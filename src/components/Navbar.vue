@@ -5,11 +5,11 @@
         <router-link :to="{ name: 'Index' }">
           <span class="nav-title">Tiên Vương Tiệm Tạp Hóa</span>
         </router-link>
-        <a href class="btn-floating btn-large halfway-fab pink">
+        <i class="btn-floating btn-large halfway-fab pink">
           <router-link :to="{ name: 'Add' }">
             <i class="material-icons">add</i>
           </router-link>
-        </a>
+        </i>
       </div>
     </nav>
   </div>

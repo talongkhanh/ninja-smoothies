@@ -17,6 +17,6 @@ export default {
 
 <style>
 #app {
-  font-family: "Nunito";
+  font-family: "Montserrat";
 }
 </style>
